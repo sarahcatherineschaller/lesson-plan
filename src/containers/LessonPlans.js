@@ -12,7 +12,7 @@ class LessonPlans extends Component {
 	render() {
 		return(
 			<div>
-			{this.props.title}
+			Lesson Plans
 			</div>
 		)
 	}
