@@ -10,9 +10,14 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div>
-
-      </div>
+        <Router>
+          <div>
+            <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+          </div>
+        </Router>
     );
   }
 }
