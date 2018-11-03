@@ -6,7 +6,7 @@ import lessonPlanEditData from './reducers/lessonPlanEditData';
 
 
 const reducers = combineReducers({
-	lesson_plans,
+	lessonPlans,
 	lessonPlanFormData,
 	lessonPlanEditData
 });
