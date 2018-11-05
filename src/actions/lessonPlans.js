@@ -17,7 +17,6 @@ export const getLessonPlans = () => {
 	return dispatch => {
 		return fetch('http://localhost:3001/api/v1/lesson_plans')
 		.then(response => response.json())
-		.then((data) => {this.setState({ lesson_plans: data }) })
 		.then(lesson_plans => dispatch(setLessonPlans(lesson_plans)))
 		.catch(error => console.log(error))
 	}

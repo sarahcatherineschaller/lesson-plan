@@ -9,3 +9,12 @@ const initialState = {
 	other: ''
 }
 
+export default (state = initialState, action) => {
+	switch (action.type) {
+		case 'UPDATED_DATA':
+			return action.lessonPlanFormData;
+
+		default:
+			return state;
+	}
+}

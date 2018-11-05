@@ -5,7 +5,14 @@ import { updateLessonPlanFormData } from '../actions/lessonPlanForm';
 
 class LessonPlanForm extends Component {
 	state = {
-		title: '',
+		title: '', 
+		grade_level: '', 
+		subject: '', 
+		total_time: '', 
+		objective: '', 
+		materials: '', 
+		summary: '', 
+		other: '',
 	}
 
 	handleChange = event => {
@@ -21,12 +28,14 @@ class LessonPlanForm extends Component {
 	}
 
 	render() {
+		const { title } = this.props.lessonPlanFormData
+
 		return(
 			<div>
 				<form onSubmit={ (event) => this.handleSubmit(event) }>
 				<p>
 					<label>add lesson plan</label>
-					<input type="text" onChange={ (event) => this.handleChange(event) } value={ this.state.title } />
+					<input type="text" onChange={ (event) => this.handleChange(event) } value={ title } />
 				</p>
 				<input type="submit" />
 				</form>
@@ -35,7 +44,13 @@ class LessonPlanForm extends Component {
 	}
 }
 
+const mapStateToProps = state => {
+	return {
+		lessonPlanFormData: state.lessonPlanFormData
+	}
+}
 
 
 
-export default connect()(LessonPlanForm);
+
+export default connect(mapStateToProps, { createLessonPlan })(LessonPlanForm);
