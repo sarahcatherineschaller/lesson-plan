@@ -4,22 +4,13 @@ import { createLessonPlan } from '../actions/lessonPlans';
 import { updateLessonPlanFormData } from '../actions/lessonPlanForm';
 
 class LessonPlanForm extends Component {
-	state = {
-		title: '', 
-		grade_level: '', 
-		subject: '', 
-		total_time: '', 
-		objective: '', 
-		materials: '', 
-		summary: '', 
-		other: '',
-	}
 
 	handleChange = event => {
 		const { name, value } = event.target 
-		this.setState({
+		const currentLessonPlanFormData = Object.assign({}, this.props.lessonPlanFormData, {
 			[name]: value
 		})
+		this.props.updateLessonPlanFormData(currentLessonPlanFormData)
 	}
 
 	handleSubmit = event => {
@@ -35,7 +26,7 @@ class LessonPlanForm extends Component {
 				<form onSubmit={ (event) => this.handleSubmit(event) }>
 				<p>
 					<label>add lesson plan</label>
-					<input type="text" onChange={ (event) => this.handleChange(event) } value={ title } />
+					<input type="text" onChange={ event => this.handleChange(event) } name="title" value={ title } />
 				</p>
 				<input type="submit" />
 				</form>
@@ -53,4 +44,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, { createLessonPlan })(LessonPlanForm);
+export default connect(mapStateToProps, { createLessonPlan, updateLessonPlanFormData })(LessonPlanForm);

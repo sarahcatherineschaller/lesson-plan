@@ -6,6 +6,7 @@ import LessonPlanCard from '../components/LessonPlanCard';
 
 
 class LessonPlan extends Component {
+
 	render() {
 		return(
 			<div>

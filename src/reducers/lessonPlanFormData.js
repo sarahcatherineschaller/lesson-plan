@@ -1,4 +1,4 @@
-const initialState = { 
+const intialState = {
 	title: '', 
 	grade_level: '', 
 	subject: '', 
@@ -6,13 +6,13 @@ const initialState = {
 	objective: '', 
 	materials: '', 
 	summary: '', 
-	other: ''
+	other: '',
 }
 
-export default (state = initialState, action) => {
-	switch (action.type) {
-		case 'UPDATED_DATA':
-			return action.lessonPlanFormData;
+export default (state = intialState, action) => {
+	switch(action.type) {
+		case 'UPDATE_LESSON_PLAN':
+			return action.lessonPlanFormData 
 
 		default:
 			return state;

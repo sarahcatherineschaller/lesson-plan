@@ -5,7 +5,7 @@ class LessonPlanCard extends Component {
 	render() {
 		return(
 			<div>
-				<h3>{this.props.title}</h3>
+				<h3>Lesson Plan Card</h3>
 			</div>
 		)
 	}
