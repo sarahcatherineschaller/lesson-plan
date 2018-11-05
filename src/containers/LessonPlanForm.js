@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createLessonPlan } from '../actions/lessonPlans';
+import { updateLessonPlanFormData } from '../actions/lessonPlanForm';
 
 class LessonPlanForm extends Component {
 	state = {
@@ -8,14 +9,15 @@ class LessonPlanForm extends Component {
 	}
 
 	handleChange = event => {
+		const { name, value } = event.target 
 		this.setState({
-			title: event.target.value
-		});
+			[name]: value
+		})
 	}
 
 	handleSubmit = event => {
 		event.preventDefault();
-		this.props.addLessonPlan(this.state)
+		this.props.createLessonPlan(this.props.lessonPlanFormData, this.props.history)
 	}
 
 	render() {
