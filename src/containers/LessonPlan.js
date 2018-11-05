@@ -3,9 +3,14 @@ import { connect } from 'react-redux';
 import LessonPlans from './LessonPlans';
 import LessonPlanForm from './LessonPlanForm';
 import LessonPlanCard from '../components/LessonPlanCard';
+import { getLessonPlan } from '../actions/lessonPlanActions';
 
 
 class LessonPlan extends Component {
+
+	componentDidMount() {
+		this.props.getLessonPlan(this.props.match.params.lessonPlanId);
+	}
 
 	render() {
 		return(

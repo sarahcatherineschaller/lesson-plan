@@ -18,6 +18,8 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/lesson_plans" component={LessonPlans} />
+            <Route exact path="/lesson_plans/new" component={LessonPlanForm} />
+            <Route exact path="/lesson_plans/:lessonPlanId" component={LessonPlan}
           </div>
         </Router>
     );
