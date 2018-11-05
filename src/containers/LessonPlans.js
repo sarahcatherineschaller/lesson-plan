@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { getLessonPlans } from '../actions/lessonPlans';
 import LessonPlan from './LessonPlan';
-import LessPlanForm from './LessonPlanForm';
+import LessonPlanForm from './LessonPlanForm';
 
 
 class LessonPlans extends Component {
@@ -17,8 +17,10 @@ class LessonPlans extends Component {
 			<div>
 			<h1>Lesson Plans</h1>
 			<Switch>
-				<Route exact path="/lesson_plans/new" component={LessonPlanForm} />
-				<Route exact path="/lesson_plans/:lessonPlanId" component={LessonPlan} />
+				<LessonPlanForm />
+				<LessonPlan />
+				//<Route exact path="/lesson_plans/new" component={LessonPlanForm} />
+				//<Route exact path="/lesson_plans/:lessonPlanId" component={LessonPlan} />
 			</Switch>
 			</div>
 		)
