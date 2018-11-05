@@ -16,12 +16,12 @@ class LessonPlans extends Component {
 		return(
 			<div>
 			<h1>Lesson Plans</h1>
-			<Switch>
-				<LessonPlanForm />
+			
 				<LessonPlan />
-				//<Route exact path="/lesson_plans/new" component={LessonPlanForm} />
-				//<Route exact path="/lesson_plans/:lessonPlanId" component={LessonPlan} />
-			</Switch>
+				<LessonPlanForm />
+				
+			
+			
 			</div>
 		)
 	}
